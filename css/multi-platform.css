@@ -1,0 +1,489 @@
+/* ==========================================================================
+   Multi-Platform Optimization CSS
+   Cross-platform compatibility and device-specific optimizations
+   ========================================================================== */
+
+/* Base Cross-Platform Resets */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS Safari Optimizations */
+@supports (-webkit-touch-callout: none) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
+    .btn-level {
+        -webkit-appearance: none;
+        border-radius: 12px; /* Ensure proper radius on iOS */
+    }
+    
+    input,
+    textarea,
+    select {
+        -webkit-appearance: none;
+        border-radius: 8px;
+    }
+    
+    /* Fix iOS viewport issues */
+    body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Android Chrome Optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .hero-content h1 {
+        font-feature-settings: "kern" 1;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-img,
+    .course-image img,
+    .testimonial-author img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Tablet Landscape Optimizations */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero {
+        height: 80vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .path-container {
+        max-width: 900px;
+    }
+    
+    .level-node {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Mobile Portrait Optimizations */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        min-height: 52px; /* Larger touch targets on mobile */
+    }
+    
+    /* Optimize learning path for mobile */
+    .path-level {
+        margin-bottom: 2rem;
+    }
+    
+    .level-content {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .level-info {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Mobile Landscape Optimizations */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 90vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .top-bar {
+        display: none; /* Hide on mobile landscape to save space */
+    }
+}
+
+/* Small Phone Optimizations (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .course-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonials-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .path-summary {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .summary-item {
+        padding: 1rem;
+    }
+    
+    .summary-number {
+        font-size: 2rem;
+    }
+}
+
+/* Large Desktop Optimizations (1400px+) */
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    .path-container {
+        max-width: 1000px;
+    }
+}
+
+/* Ultra-wide Display Optimizations (1920px+) */
+@media screen and (min-width: 1920px) {
+    .hero {
+        height: 100vh;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+    }
+    
+    .section-header p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Print Optimizations */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    .header,
+    .hero,
+    .cta-section,
+    .floating-elements,
+    .hamburger,
+    .slider-controls,
+    .slider-dots {
+        display: none !important;
+    }
+    
+    .about,
+    .courses,
+    .learning-path,
+    .testimonials,
+    .contact {
+        page-break-inside: avoid;
+        padding: 2rem 0;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    .course-card,
+    .testimonial-card {
+        break-inside: avoid;
+        border: 1px solid #000;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
+    .btn-level {
+        display: none;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* Dark Mode Support (Future Implementation) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --border-light: #334155;
+        --border-medium: #475569;
+    }
+    
+    .course-card,
+    .testimonial-card,
+    .feature-card {
+        background: var(--bg-secondary);
+        border-color: var(--border-light);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .floating-elements,
+    .glow-text {
+        display: none;
+    }
+    
+    .card-advanced:hover {
+        transform: none;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #0000ff;
+        --accent-color: #0066cc;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f5f5f5;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
+    .btn-level {
+        border: 2px solid;
+        font-weight: bold;
+    }
+    
+    .course-card,
+    .testimonial-card,
+    .feature-card {
+        border: 2px solid #000000;
+    }
+    
+    .glow-text {
+        text-shadow: none;
+        color: #000000 !important;
+        font-weight: bold;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects for touch devices */
+    .course-card:hover,
+    .feature-card:hover,
+    .testimonial-card:hover,
+    .card-advanced:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-outline:hover,
+    .btn-level:hover {
+        transform: none;
+    }
+    
+    /* Enhance touch targets */
+    .nav-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
+    .btn-level {
+        min-height: 48px;
+        min-width: 48px;
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Better spacing for touch */
+    .hero-buttons {
+        gap: 1.5rem;
+    }
+    
+    .features-grid,
+    .courses-grid,
+    .testimonials-grid {
+        gap: 2rem;
+    }
+}
+
+/* Specific Device Optimizations */
+
+/* iPhone SE and small devices */
+@media screen and (max-width: 375px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .level-node {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .level-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* iPad Pro and large tablets */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .path-container {
+        max-width: 850px;
+    }
+}
+
+/* Performance Optimizations */
+.hero-slider,
+.course-card,
+.testimonial-card {
+    will-change: transform;
+}
+
+/* Optimize fonts for different devices */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Ensure proper contrast ratios */
+.btn-primary {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    /* Contrast ratio: 4.5:1 or higher */
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    /* Contrast ratio: 3:1 or higher for borders */
+}
+
+/* Accessibility enhancements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus indicators */
+*:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+} 

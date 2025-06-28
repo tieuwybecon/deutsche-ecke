@@ -1,0 +1,99 @@
+/* SimpleRichTextEditor Styles */
+.simple-rich-text-editor [contenteditable="true"] {
+  min-height: 200px;
+  outline: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.simple-rich-text-editor [contenteditable="true"]:empty:before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.simple-rich-text-editor [contenteditable="true"]:focus {
+  outline: none;
+}
+
+/* Content editable styles */
+.simple-rich-text-editor [contenteditable="true"] h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.simple-rich-text-editor [contenteditable="true"] h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.simple-rich-text-editor [contenteditable="true"] h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.simple-rich-text-editor [contenteditable="true"] blockquote {
+  border-left: 4px solid #e5e7eb;
+  margin: 1em 0;
+  padding-left: 1em;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.simple-rich-text-editor [contenteditable="true"] code {
+  background-color: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.simple-rich-text-editor [contenteditable="true"] ul,
+.simple-rich-text-editor [contenteditable="true"] ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.simple-rich-text-editor [contenteditable="true"] li {
+  margin: 0.5em 0;
+}
+
+/* Focus styles */
+.simple-rich-text-editor.focused {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Color picker hover effects */
+.color-picker-container .color-button {
+  margin: 2px;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  border-radius: 8px;
+  border: 1.5px solid #e5e7eb;
+  box-sizing: border-box;
+  transition: transform 0.15s, border-color 0.15s;
+  background-clip: padding-box;
+  cursor: pointer;
+}
+
+.color-picker-container .color-button:hover, .color-picker-container .color-button:focus {
+  transform: scale(1.18);
+  border-color: #6366f1;
+  z-index: 2;
+  outline: none;
+}
+
+.color-picker-container .color-button:active {
+  border-color: #2563eb;
+}
+
+/* Font size dropdown hover effects */
+.font-size-container .font-size-option:hover {
+  background-color: #f3f4f6;
+  transform: translateX(2px);
+} 

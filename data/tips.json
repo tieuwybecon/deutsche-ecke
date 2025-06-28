@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1751042833122",
+    "title": "sdfsdf",
+    "content": "sdfsdfsdf",
+    "excerpt": "sdfsdf",
+    "status": "published",
+    "images": [
+      "/uploads/grammar/1751042816520_chick.png"
+    ],
+    "videoUrls": [
+      "https://www.youtube.com/watch?v=5xmesz3CoWg&list=RD5xmesz3CoWg&start_radio=1&ab_channel=ChillCartoonVibes"
+    ],
+    "order": 0,
+    "author": "Admin",
+    "createdAt": "2025-06-27T16:47:13.122Z",
+    "updatedAt": "2025-06-27T16:47:34.474Z"
+  }
+]

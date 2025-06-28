@@ -1,0 +1,124 @@
+/* RichTextEditor Styles */
+.rich-text-editor [contenteditable="true"] {
+  min-height: 200px;
+  outline: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.rich-text-editor [contenteditable="true"]:empty:before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.rich-text-editor [contenteditable="true"]:focus {
+  outline: none;
+}
+
+/* Toolbar button hover effects */
+.rich-text-editor .toolbar-button:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Color picker styles */
+.color-picker-container .color-button {
+  transition: all 0.2s ease;
+}
+
+.color-picker-container .color-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Font size dropdown styles */
+.font-size-container .font-size-option:hover {
+  background-color: #f3f4f6;
+  transform: translateX(2px);
+}
+
+/* Content editable styles */
+.rich-text-editor [contenteditable="true"] h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.rich-text-editor [contenteditable="true"] h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.rich-text-editor [contenteditable="true"] h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.rich-text-editor [contenteditable="true"] blockquote {
+  border-left: 4px solid #e5e7eb;
+  margin: 1em 0;
+  padding-left: 1em;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.rich-text-editor [contenteditable="true"] code {
+  background-color: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.rich-text-editor [contenteditable="true"] ul,
+.rich-text-editor [contenteditable="true"] ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.rich-text-editor [contenteditable="true"] li {
+  margin: 0.5em 0;
+}
+
+/* Focus styles */
+.rich-text-editor.focused {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #1f2937;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #1f2937;
+}
+
+.group:hover .tooltip {
+  opacity: 1;
+} 

@@ -1,0 +1,503 @@
+/* ==========================================================================
+   Enhanced Responsive Design & Multi-Platform Optimization
+   Tối ưu hóa thiết kế cho tất cả thiết bị và nền tảng
+   ========================================================================== */
+
+/* Cross-Platform Base Optimizations */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* Better Color Contrast for All Text */
+.hero-content h1,
+.hero-content h2 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+/* Section Headers with Better Contrast */
+.section-header h2 {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+}
+
+.section-header p {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+}
+
+/* Enhanced Button Contrast */
+.btn-primary {
+    background: var(--secondary-color);
+    color: #ffffff !important;
+    border: none;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--secondary-color) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Mobile-First Enhanced Responsive */
+@media screen and (max-width: 768px) {
+    /* Hero Section Mobile */
+    .hero {
+        height: 75vh;
+        min-height: 550px;
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem !important;
+        line-height: 1.4;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        min-height: 50px;
+        font-size: 1rem;
+        padding: 1rem;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Navigation Mobile */
+    .top-bar {
+        padding: 0.5rem 0;
+    }
+    
+    .contact-info {
+        font-size: 0.8rem;
+    }
+    
+    .contact-info span {
+        margin-right: 1rem;
+    }
+    
+    /* Learning Path Mobile */
+    .learning-path {
+        padding: 3rem 0;
+    }
+    
+    .path-container {
+        padding: 0 1rem;
+    }
+    
+    .path-line {
+        display: none;
+    }
+    
+    .path-level {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    
+    .path-level:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .path-level:nth-child(even) .level-content {
+        text-align: center;
+    }
+    
+    .level-node {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+    }
+    
+    .level-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .level-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .level-content {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .level-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .level-skills {
+        text-align: left;
+        max-width: 280px;
+        margin: 0 auto 1rem;
+    }
+    
+    .level-info {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    /* Course Cards Mobile */
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .course-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    /* Features Mobile */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .feature-card {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+    
+    /* Testimonials Mobile */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .testimonials-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* CTA Section Mobile */
+    .cta-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .cta-text h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-large {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Contact Form Mobile */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Tablet Optimizations */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .path-container {
+        max-width: 700px;
+    }
+    
+    .level-node {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero-content p {
+        font-size: 1rem !important;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .level-node {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .level-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .level-icon i {
+        font-size: 1rem;
+    }
+    
+    .level-content {
+        padding: 1rem;
+    }
+    
+    .level-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .path-summary {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .summary-number {
+        font-size: 1.8rem;
+    }
+    
+    .testimonials-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .path-container {
+        max-width: 900px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .course-card:hover,
+    .feature-card:hover,
+    .testimonial-card:hover {
+        transform: none;
+    }
+    
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-outline:hover {
+        transform: none;
+    }
+    
+    /* Larger touch targets */
+    .nav-link {
+        min-height: 48px;
+        padding: 1rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-img,
+    .course-image img {
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .course-card,
+    .testimonial-card,
+    .feature-card {
+        background: var(--primary-color);
+        color: var(--text-light);
+    }
+    
+    .section-header h2 {
+        color: var(--text-light) !important;
+    }
+    
+    .section-header p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .hero,
+    .cta-section,
+    .floating-elements {
+        display: none !important;
+    }
+    
+    * {
+        background: transparent !important;
+        color: black !important;
+        text-shadow: none !important;
+    }
+    
+    .course-card,
+    .testimonial-card {
+        border: 1px solid #000;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Focus Indicators for Accessibility */
+*:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Enhanced Contrast for Better Readability */
+.feature-card p,
+.course-content p,
+.testimonial-content p {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+}
+
+.feature-card h3,
+.course-content h3 {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+}
+
+/* CTA Section Enhanced Contrast */
+.cta-text h2 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-text p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Learning Path Enhanced Visibility */
+.level-content h3 {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+}
+
+.level-content p {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+}
+
+.level-skills li {
+    color: var(--text-secondary) !important;
+}
+
+/* Ensure sufficient contrast ratios */
+.path-summary .summary-label {
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+}
+
+.path-summary .summary-number {
+    color: var(--primary-color) !important;
+    font-weight: 800;
+} 
