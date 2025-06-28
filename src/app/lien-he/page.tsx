@@ -118,7 +118,7 @@ const ContactPage = () => {
               href="tel:0777024240" 
               className="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition-all shadow-lg flex items-center gap-2"
             >
-              <FaPhone /> 077.024.240
+              <FaPhone /> 0777.024.240
             </a>
           </div>
           
@@ -373,7 +373,7 @@ const ContactPage = () => {
                   <li>• Thông tin của bạn sẽ được bảo mật tuyệt đối</li>
                   <li>• Chúng tôi sẽ liên hệ tư vấn miễn phí trong vòng 24h</li>
                   <li>• Bạn có thể đổi khóa học hoặc thời gian học sau khi tư vấn</li>
-                  <li>• Hotline hỗ trợ 24/7: <strong>077.024.240</strong></li>
+                  <li>• Hotline hỗ trợ 24/7: <strong>0777.024.240</strong></li>
                 </ul>
               </div>
             </form>
