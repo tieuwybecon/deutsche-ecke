@@ -21,6 +21,7 @@ import {
   Eye as EyeIcon
 } from 'lucide-react'
 import SimpleRichTextEditor from '@/components/admin/SimpleRichTextEditor'
+import { useRouter } from 'next/navigation'
 
 interface Post {
   id: string
@@ -48,6 +49,14 @@ export default function PostsManagement() {
     status: 'draft' as 'published' | 'draft' | 'pending',
     category: 'tin-tuc'
   })
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('adminToken') : null;
+    if (!token) {
+      router.push('/admin/login');
+    }
+  }, [router])
 
   // Load posts từ API
   useEffect(() => {

@@ -24,6 +24,7 @@ import {
   Play
 } from 'lucide-react'
 import SimpleRichTextEditor from '@/components/admin/SimpleRichTextEditor'
+import { useRouter } from 'next/navigation'
 
 interface ExamGuidePost {
   id: string
@@ -50,6 +51,7 @@ export default function ExamGuideManagement() {
   const [activeTab, setActiveTab] = useState<'content' | 'images' | 'videos'>('content')
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [newVideoUrl, setNewVideoUrl] = useState('')
+  const router = useRouter()
 
   const [formData, setFormData] = useState({
     title: '',
@@ -66,6 +68,13 @@ export default function ExamGuideManagement() {
     { id: 'images', label: 'Hình ảnh', icon: Image },
     { id: 'videos', label: 'Video', icon: Video }
   ]
+
+  useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('adminToken') : null;
+    if (!token) {
+      router.push('/admin/login');
+    }
+  }, [router]);
 
   useEffect(() => {
     loadPosts()

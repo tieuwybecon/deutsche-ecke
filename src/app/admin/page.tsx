@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { 
   Users, 
@@ -15,6 +15,7 @@ import {
   PenTool,
   BarChart3
 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 
 interface AdminStats {
@@ -25,6 +26,16 @@ interface AdminStats {
 }
 
 export default function AdminDashboard() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('adminToken') : null;
+    if (!token) {
+      router.push('/admin/login');
+    }
+    // Có thể kiểm tra thêm tính hợp lệ của token nếu muốn
+  }, [router]);
+
   const [stats] = useState<AdminStats>({
     totalStudents: 486,
     activeCourses: 24,

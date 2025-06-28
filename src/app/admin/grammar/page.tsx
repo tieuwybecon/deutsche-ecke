@@ -3,8 +3,19 @@
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GraduationCap } from 'lucide-react'
 import GrammarManager from '@/components/admin/GrammarManager'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function AdminGrammarPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('adminToken') : null;
+    if (!token) {
+      router.push('/admin/login');
+    }
+  }, [router]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
